@@ -1,0 +1,57 @@
+<section class="left">
+    <div class="title">
+        <h2>{{label}}</h2>
+        <h3>Cotiza tu Crédito</h3>
+    </div>
+    <img src="../../../assets/family.jpg">
+</section>
+
+<mat-accordion>
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0, 'CRÉDITO HSBC')" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                ¿Cómo Usarás tu Crédito?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+    
+        <button (click)="setStep(1, 'Crédito Personal')" class="button" mat-button>Crédito Personal</button>
+        <button (click)="setStep(1, 'Comprar un Auto')" class="button" mat-button>Comprar un Auto</button>
+        <button (click)="setStep(1, 'Referenciar Deudas')" class="button" mat-button>Referenciar Deudas</button>
+        <button (click)="setStep(1, 'Irme de Viaje')" class="button" mat-button>Irme de Viaje</button>
+        <button (click)="setStep(1, 'Emergencia')" class="button" mat-button>Emergencia</button>
+        <button (click)="setStep(1, 'Mi primer crédito')" class="button" mat-button>Mi primer crédito</button>
+    
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1, label)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                ¿Cómo te gustaría comprobar ingresos?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button class="button" (click)="setStep(2, 'Estado de Cuenta')" mat-button>Estado de Cuenta</button>
+        <button class="button" (click)="setStep(2, 'Recibo de Nomina')" mat-button>Recibo de Nomina</button>
+        <button class="button" (click)="setStep(2, 'Recibo de Honorarios')" mat-button>Recibo de Honorarios</button>
+        <button class="button" (click)="setStep(2, 'Nota')" mat-button>Nota</button>
+        <button class="button" (click)="setStep(2, 'Ticket')" mat-button>Ticket</button>
+        <button class="button" (click)="setStep(2, 'Remision')" mat-button>Remision</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2, label)" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                ¿Cuánto Dinero Necesitas?
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-slider
+        [max]=600000
+        [min]=0
+        [thumbLabel]=true
+        [tickInterval]="tickInterval"></mat-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header class="end">
+            <button mat-raised-button disabled>Comenzar Mi Solicitud</button>
+            <!-- <button mat-raised-button color="warn">Comenzar Mi Solicitud</button> -->
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+</mat-accordion>
+      
