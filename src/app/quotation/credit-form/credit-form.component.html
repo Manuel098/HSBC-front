@@ -1,9 +1,9 @@
 <section class="left">
     <div class="title">
-        <h2>{{label}}</h2>
+        <h2>{{mat[0]}}</h2>
         <h3>Cotiza tu Crédito</h3>
     </div>
-    <img src="../../../assets/family.jpg">
+    <img src={{URL}}>
 </section>
 
 <mat-accordion>
@@ -12,6 +12,9 @@
             <mat-panel-title>
                 ¿Cómo Usarás tu Crédito?
             </mat-panel-title>
+            <mat-panel-description class="mat">
+                {{mat[0]}}
+            </mat-panel-description>
         </mat-expansion-panel-header>
     
         <button (click)="setStep(1, 'Crédito Personal')" class="button" mat-button>Crédito Personal</button>
@@ -22,11 +25,14 @@
         <button (click)="setStep(1, 'Mi primer crédito')" class="button" mat-button>Mi primer crédito</button>
     
     </mat-expansion-panel>
-    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1, label)" hideToggle>
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1, label[0])" hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
                 ¿Cómo te gustaría comprobar ingresos?
             </mat-panel-title>
+            <mat-panel-description *ngIf="step!=0" class="mat">
+                {{mat[1]}}
+            </mat-panel-description>
         </mat-expansion-panel-header>
         <button class="button" (click)="setStep(2, 'Estado de Cuenta')" mat-button>Estado de Cuenta</button>
         <button class="button" (click)="setStep(2, 'Recibo de Nomina')" mat-button>Recibo de Nomina</button>
@@ -35,19 +41,73 @@
         <button class="button" (click)="setStep(2, 'Ticket')" mat-button>Ticket</button>
         <button class="button" (click)="setStep(2, 'Remision')" mat-button>Remision</button>
     </mat-expansion-panel>
-    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2, label)" hideToggle>
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2, label[1])" hideToggle>
         <mat-expansion-panel-header>
             <mat-panel-title>
                 ¿Cuánto Dinero Necesitas?
             </mat-panel-title>
+            <mat-panel-description class="mat">
+                {{mat[2]}}
+            </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-slider
-        [max]=600000
+        [max]=60000
         [min]=0
         [thumbLabel]=true
-        [tickInterval]="tickInterval"></mat-slider>
+        [tickInterval]="tickInterval"
+        [displayWith]=formatLabel
+        ></mat-slider>
     </mat-expansion-panel>
-    <mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3, 'asd')" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                ¿Qué enganche dará?
+            </mat-panel-title>
+            <mat-panel-description class="mat">
+                {{mat[3]}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-slider
+        [max]=60000
+        [min]=0
+        [thumbLabel]=true
+        [tickInterval]="tickInterval"
+        [displayWith]=formatLabel
+        ></mat-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4, 'asd')" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                ¿En cuantás quincenas pagará su crédito?
+            </mat-panel-title>
+            <mat-panel-description class="mat">
+                {{mat[4]}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-slider
+        [max]=60000
+        [min]=0
+        [thumbLabel]=true
+        [tickInterval]="tickInterval"
+        [displayWith]=formatLabel
+        ></mat-slider>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5, 'asd')" hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Forma de Registro
+            </mat-panel-title>
+            <mat-panel-description class="mat">
+                {{mat[4]}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width">
+            <input matInput maxlength="256" placeholder="¿Cuál es tu nombre?">
+            <mat-hint><strong>Como aparece en tu identificación</strong> </mat-hint>
+          </mat-form-field>
+        <button (click)="setStep(6, 'asd')" class="button" mat-button>Continuar</button>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3, label[2])" hideToggle>
         <mat-expansion-panel-header class="end">
             <button mat-raised-button disabled>Comenzar Mi Solicitud</button>
             <!-- <button mat-raised-button color="warn">Comenzar Mi Solicitud</button> -->

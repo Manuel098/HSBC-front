@@ -44,6 +44,21 @@ mat-expansion-panel{
         color: #FFFFFF;
         background: #F44336;
     }
+    .mat{
+        color: #F44336;
+        vertical-align: middle;
+        font-weight: bolder;
+        font-size: small;
+    }
+    strong{
+        color: #F44336;
+    }
+    .mat-focused .placeholder {
+        color: #00D318;
+    }
+    ::placeholder{
+        color: #F44336!important;
+    }
     mat-panel-title{
         text-align: left;
         font-family: inherit;
