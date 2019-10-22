@@ -7,24 +7,27 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {
-  MatButtonModule, MatCardModule, MatDialogModule,
+  MatButtonModule, MatSelectModule, MatCardModule, MatDialogModule,
   MatDividerModule, MatExpansionModule, MatFormFieldModule,
   MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
-  MatToolbarModule, MatNativeDateModule, MatIconModule,
+  MatToolbarModule, MatNativeDateModule, MatIconModule, MatDatepickerModule,
   MatSidenavModule, MatListModule, MatTableModule, MatCheckboxModule,
   MAT_CHECKBOX_CLICK_ACTION
 } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './structure/header/header.component';
+import { PersonalFormComponent } from './data/personal-form/personal-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreditFormComponent,
-    HeaderComponent
+    HeaderComponent,
+    PersonalFormComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule,
-    MatSliderModule, MatButtonModule,
+    BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDatepickerModule,
+    MatSliderModule, MatButtonModule, FormsModule, MatSelectModule,
     BrowserAnimationsModule,MatCardModule, MatDialogModule,
     MatDividerModule, MatExpansionModule, MatFormFieldModule,
     MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,

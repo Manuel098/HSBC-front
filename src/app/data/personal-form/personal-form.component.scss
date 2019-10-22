@@ -1,0 +1,48 @@
+.headline{
+    width: 100%;
+    background: #F6F8FA;
+    margin: 0%;
+    .left, .right{
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 1px;
+        min-height: 20mm;
+        box-shadow: 5px 10px 5px #DADBE5;
+        border-radius: 5px;
+        @media screen and(min-width: 34em){
+            width: 49.68%;
+            display: inline-block;
+            min-height: 20mm;
+        }
+        h5, h6, mat-slider{
+            margin-left:1em ;
+        }
+        h5{
+            color: #AFACB3;
+            font-size: 1em;
+            margin: 10px 0 0 1em;
+        }
+        h6{
+            color: #F44336;
+            font-family: Bahnschrift Light;
+            font-size: larger;
+            margin: 20px 0 0 1em;
+        }
+    }
+}
+.body{
+    padding: 1rem;
+    width: 70%;
+    margin: 0 auto;
+    p{
+        span{
+            mat-form-field{
+                width: 7rem;
+            }
+            .name, .mail{
+                width: 9rem;
+            }
+        }
+    }
+}

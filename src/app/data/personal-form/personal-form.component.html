@@ -1,0 +1,105 @@
+<div class="headline">
+    <div class="left">
+        <h5>Paso 1</h5>
+        <h6>DATOS GENERALES</h6>
+    </div>
+    <div class="right">
+        <h5>Tu progreso en la aplicación</h5>
+        <mat-slider min=0 max=100 step="step" value="value"></mat-slider>
+    </div>
+</div>
+<div class="body">
+    <p>
+        Me llamo <span>
+            <mat-form-field class="name">
+                <input matInput type="text" placeholder="Nombre" [(ngModel)]="data.name">
+                <button mat-button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Apellido Paterno" [(ngModel)]="data.apPat">
+                <button mat-button *ngIf="data.apPat" matSuffix mat-icon-button aria-label="Clear" (click)="data.apPat=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="text" placeholder="Apellido Materno" [(ngModel)]="data.apMat">
+                <button mat-button *ngIf="data.apMat" matSuffix mat-icon-button aria-label="Clear" (click)="data.apMat=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span> y me pueden contactar en mi celular <span>
+            <mat-form-field>
+                <input matInput type="text" maxlength="10" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="Telefono Celular" [(ngModel)]="data.celNum">
+                <button mat-button *ngIf="data.celNum" matSuffix mat-icon-button aria-label="Clear" (click)="data.celNum=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+         </span> o al número fijo <span>
+            <mat-form-field>
+                <input matInput type="text" maxlength="10" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" placeholder="Telefono fijo" [(ngModel)]="data.fijNum">
+                <button mat-button *ngIf="data.fijNum" matSuffix mat-icon-button aria-label="Clear" (click)="data.fijNum=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span> o en mi correo electronico <span>
+            <mat-form-field class="mail">
+                <input matInput placeholder="Correo" [formControl]="emailFormControl">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Porfavor ingrese un correo valido :c
+                </mat-error>
+                <button mat-button *ngIf="data.fijNum" matSuffix mat-icon-button aria-label="Clear" (click)="data.fijNum=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span> . Soy <span>
+            <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                <mat-select [(ngModel)]="data.sex">
+                    <mat-option>Ninguno</mat-option>
+                    <mat-option value="man">Hombre</mat-option>
+                    <mat-option value="woman">Mujer</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </span>  y nací el <span>
+            <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="data.picker" [matDatepicker]="picker" placeholder="Fecha de nacimiento">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker disabled="false" #picker></mat-datepicker>
+            </mat-form-field>
+        </span> en el estado de <span>
+            <mat-form-field class="mail">
+                <mat-label>Estado</mat-label>
+                <mat-select [(ngModel)]="data.state" >
+                    <mat-option *ngFor="let state of states" value="{{state}}">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </span> con nacionalidad <span>
+            <mat-form-field class="mail">
+                <mat-label>Nacionalidad</mat-label>
+                <mat-select [(ngModel)]="data.nacionality" >
+                    <mat-option value="mexican">Mexicana</mat-option>
+                    <mat-option value="extranjera">Extranjera</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </span>, mi RFC es <span>
+            <mat-form-field class="mail">
+                <input matInput type="text" maxlength="13" placeholder="RFC" [(ngModel)]="data.RFC">
+                <button mat-button *ngIf="data.RFC" matSuffix mat-icon-button aria-label="Clear" (click)="data.RFC=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span> y mi CURP es <span>
+            <mat-form-field class="mail">
+                <input matInput type="text" maxlength="18" placeholder="CURP" [(ngModel)]="data.CURP">
+                <button mat-button *ngIf="data.CURP" matSuffix mat-icon-button aria-label="Clear" (click)="data.CURP=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span>.
+    </p>
+    <button (click)="simon()">Hola</button> 
+</div>
