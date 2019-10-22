@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {
   MatButtonModule, MatSelectModule, MatCardModule, MatDialogModule,
-  MatDividerModule, MatExpansionModule, MatFormFieldModule,
+  MatDividerModule, MatExpansionModule, MatFormFieldModule, MatProgressBarModule,
   MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
   MatToolbarModule, MatNativeDateModule, MatIconModule, MatDatepickerModule,
   MatSidenavModule, MatListModule, MatTableModule, MatCheckboxModule,
@@ -28,7 +28,7 @@ import { PersonalFormComponent } from './data/personal-form/personal-form.compon
   imports: [
     BrowserModule, AppRoutingModule, ReactiveFormsModule, MatDatepickerModule,
     MatSliderModule, MatButtonModule, FormsModule, MatSelectModule,
-    BrowserAnimationsModule,MatCardModule, MatDialogModule,
+    BrowserAnimationsModule,MatCardModule, MatDialogModule, MatProgressBarModule,
     MatDividerModule, MatExpansionModule, MatFormFieldModule,
     MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
     MatToolbarModule, MatNativeDateModule, MatIconModule,

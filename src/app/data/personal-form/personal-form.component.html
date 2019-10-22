@@ -4,8 +4,15 @@
         <h6>DATOS GENERALES</h6>
     </div>
     <div class="right">
-        <h5>Tu progreso en la aplicación</h5>
-        <mat-slider min=0 max=100 step="step" value="value"></mat-slider>
+        <h5>Tu progreso en la aplicación:</h5>
+        <h6>{{progresBarr.value}} %</h6>
+        <mat-progress-bar
+            class="example-margin"
+            [color]="progresBarr.color"
+            [mode]="progresBarr.mode"
+            [value]="progresBarr.value"
+            [bufferValue]="progresBarr.bufferValue">
+        </mat-progress-bar>
     </div>
 </div>
 <div class="body">

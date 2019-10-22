@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
-import { invalid } from '@angular/compiler/src/render3/view/util';
 
 export interface Day {
   value: string;
@@ -14,6 +13,13 @@ export interface Day {
 })
 
 export class PersonalFormComponent implements OnInit {
+  progresBarr={
+    color : 'warn',
+    mode : 'buffer',
+    value : 0,
+    bufferValue : 0
+  }
+  
   data = {
     name:'',
     apMat:'',
@@ -47,6 +53,7 @@ export class PersonalFormComponent implements OnInit {
       console.log("the email "+this.emailFormControl.value+" is invalid");
     }else{
       this.data.mail = this.emailFormControl.value;
+      this.progresBarr.value = 30;
       console.log(this.data);
       console.log("the email "+this.emailFormControl.value+" is valid");
     }
